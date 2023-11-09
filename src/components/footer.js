@@ -1,13 +1,20 @@
 import React from 'react'
 import {BiCurrentLocation, BiPhoneCall, BiMailSend} from 'react-icons/bi';
 import payment from '../assets/payment.png';
+import {motion} from 'framer-motion';
+import { fadeIn } from '../variants';
 
 const footer = () => {
   return (
   <footer>
 
 
-    <div class="footer-nav">
+    <motion.div
+    variants={fadeIn('up',0.3)}
+          initial='hidden'
+          whileInView={'show'}
+          viewport={{once: true, amount:0.7}}
+     class="footer-nav">
 
       <div class="container">
 
@@ -165,7 +172,7 @@ const footer = () => {
 
       </div>
 
-    </div>
+    </motion.div>
 
     <div class="footer-bottom">
 

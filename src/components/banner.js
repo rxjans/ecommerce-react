@@ -2,10 +2,18 @@ import React from 'react'
 import banner from "../assets/banner-1.jpg"
 import banner2 from "../assets/banner-2.jpg"
 import banner3 from "../assets/banner-3.jpg"
+import {motion} from 'framer-motion';
+import { fadeIn } from '../variants';
+
 
 const Banner = () => {
   return (
-    <div class="banner" className='mt-2'>
+    <motion.div
+    variants={fadeIn('down',0.3)}
+          initial='hidden'
+          whileInView={'show'}
+          viewport={{once: true, amount:0.7}}
+     class="banner" className='mt-2'>
 
       <div class="container">
 
@@ -75,7 +83,7 @@ const Banner = () => {
 
       </div>
 
-    </div>
+    </motion.div>
   )
 }
 
