@@ -51,6 +51,8 @@ import cosmetics from '../assets/icons//cosmetics.svg';
 import glasses from '../assets/icons/glasses.svg';
 import bag from '../assets/icons/bag.svg';
 // dress shoes jewelry shoes perfumes cosmetics glasses bag
+import {motion} from 'framer-motion';
+import { fadeIn } from '../variants';
 
 const Products = () => {
   return (
@@ -64,7 +66,12 @@ const Products = () => {
           - SIDEBAR
         --> */}
 
-        <div class="sidebar  has-scrollbar" data-mobile-menu>
+        <motion.div
+        variants={fadeIn('right',0.1)}
+          initial='hidden'
+          whileInView={'show'}
+          viewport={{once: false, amount:0.7}}
+         class="sidebar  has-scrollbar" data-mobile-menu>
 
           <div class="sidebar-category">
 
@@ -555,7 +562,7 @@ const Products = () => {
 
           </div>
 
-        </div>
+        </motion.div>
 
 
 
@@ -1200,7 +1207,12 @@ const Products = () => {
             - PRODUCT FEATURED
           --> */}
 
-          <div class="product-featured">
+          <motion.div
+          variants={fadeIn('left',0.3)}
+          initial='hidden'
+          whileInView={'show'}
+          viewport={{once: false, amount:0.1}}
+           class="product-featured">
 
             <h2 class="title">Deal of the day</h2>
 
@@ -1375,7 +1387,7 @@ const Products = () => {
 
             </div>
 
-          </div>
+          </motion.div>
 
 
 

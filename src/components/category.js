@@ -13,10 +13,17 @@ import shoes from '../assets/icons/shoes.svg';
 import shorts from '../assets/icons/shorts.svg';
 import tee from '../assets/icons/tee.svg';
 import watch from '../assets/icons/watch.svg';
+import {motion} from 'framer-motion';
+import { fadeIn } from '../variants';
 
 const Category = () => {
   return (
-    <div class="category" className='mt-12 mb-12'>
+    <motion.div
+    variants={fadeIn('right',0.3)}
+          initial='hidden'
+          whileInView={'show'}
+          viewport={{once: true, amount:0.7}}
+     class="category" className='mt-12 mb-12'>
 
     <div className="container">
 
@@ -186,7 +193,7 @@ const Category = () => {
 
     </div>
 
-  </div>
+  </motion.div>
 
   )
 }

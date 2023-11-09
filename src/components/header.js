@@ -7,12 +7,19 @@ import Logo from '../assets/logo.png';
 import {IoBagHandleOutline} from 'react-icons/io5';
 import {AiOutlineHeart} from 'react-icons/ai';
 import {AiOutlineSearch} from 'react-icons/ai';
+import {motion} from 'framer-motion';
+import {fadeIn} from '../variants';
 
 const Header = () => {
   return (
     <header>
 
-    <div class="header-top">
+    <motion.div
+    variants={fadeIn('up',0.3)}
+    initial='hidden'
+    whileInView={'show'}
+    viewport={{once: true, amount:0.7}}
+     class="header-top">
 
       <div class="container">
 
@@ -76,9 +83,14 @@ const Header = () => {
 
       </div>
 
-    </div>
+    </motion.div>
 
-    <div className="header-main">
+    <motion.div
+    variants={fadeIn('down',0.3)}
+          initial='hidden'
+          whileInView={'show'}
+          viewport={{once: true, amount:0.7}}
+     className="header-main">
 
       <div class="container">
 
@@ -116,11 +128,16 @@ const Header = () => {
 
       </div>
 
-    </div>
+    </motion.div>
 
     <nav class="desktop-navigation-menu">
 
-      <div class="container">
+      <motion.div
+      variants={fadeIn('up',0.3)}
+          initial='hidden'
+          whileInView={'show'}
+          viewport={{once: true, amount:0.7}}
+       class="container">
 
         <ul class="desktop-menu-category-list">
 
@@ -357,7 +374,7 @@ const Header = () => {
 
         </ul>
 
-      </div>
+      </motion.div>
 
     </nav>
 
